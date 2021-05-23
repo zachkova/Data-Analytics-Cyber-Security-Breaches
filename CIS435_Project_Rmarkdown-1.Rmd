@@ -1,0 +1,115 @@
+---
+Title: " USA Cybersecurity Breaches 2009-2014"
+output: html_document
+---
+Group Members names:
+John Haag
+Nick Staub
+Sean Edwards
+Zach Kovalenko
+Kingsley Okereke
+
+Description of Project:
+  This project will give a detailed analysis of data breaches in cybersecurity in the United States of America spanning from 2009 to 2014. This analysis will cover the number of breaches, the name of the business or entity breached. The state in which the breach took place.  The person or business involved or responsible for the breach. the number of people affected by the breach, and the date the breach took place.
+  
+  
+  
+  
+   Dr Q's question's/comments about phase 1:------------------------------------------
+  are you going to develop a model that will help develop 
+  suppose you have a new breach what would you do with the new data?
+  build a prediction model to classify the breach type.
+  predict class or type of breach. classification 
+   if we want full credit: compare between 3 different models to show breach type "SVM model" 
+  variables, data types, number of breaches, give credit to dataset people citations, date we got access to data set.
+  training and validation data set. 
+  ------------------------------------------
+  
+  Dr.Q Phase 2 comments:------------------------------------------------------------------------
+  do sections and address questions in a more organized way 
+  we need to have a conclusion after every question , and a little preamble before the address the question and data.
+  if we have a graph we should mention something about the graph in our conclusion.
+  
+  "as we can see in number 3 graph we can see that this graph shows ..."
+  
+  questions/comments for q3: we need justification for why this helps to make a decsion
+  repeat the question to address
+  
+  organize the report to be readable and better suitable for delivering to someone to make decisions. 
+  
+  comment q4: how does this help a company protect there things against cyber related disclosures. need a full conclusion and preamble to the question this is not enough.
+  
+  
+  Final report: 
+  
+  confusion matrix
+  specificity
+  comparing models
+  need atleast 2 models
+  MODELS MOST IMPORTANT AND COMPARE TO BEST FITMENT OF MODEL. predict 
+  logistic model
+  SVM model
+  
+  READ CAREFULLY FOR PHASE 3 AND ANSWER ALL QUESTIONS TO GET FULL CREDIT
+  ALL MEMEBERS SHOULD KNOW EVERYTHING ABOUT THE WHOLE PROJECT NOT JUST THE QUESTION THEY ANSWERED.
+  
+  -------------------------------------------------------------------------------
+  
+  phase 3 meeting comments: ---------------------------------------------------------------------------------------------
+  dont need super high accuracy for models,  compare between them and choose which is the best fit one for data set
+   ---------------------------------------------------------------------------------------------------------------------
+  
+  
+Data Set:
+
+Date of Breach: This describes when the breach of data occured for the company in question and the date is siginficant on the being able to track on different plots certain patterns dealing with other columns in the data set.
+
+Type of Breach: This describes what type of breach the company in question was expericeing and this is useful for trends with how many companies had similar breaches and how those companies connect with other data records in the set.
+
+Date Posted: This describes what date the breach was posted and made note to the public and it gives trends on what expect next time an attack like this occurs and how to reduce these trends for future attacks.
+
+Summary: This breaks down a breif overview of what happened in the event in question.
+
+Year: This talks about the years which these events occured and it is siginifcant to the data to look at future trends in the years to come and give a prediction what is likely to happen again if these events were to occur.
+
+Questions:
+
+Question 1: Is there a relationship between number of breaches and breach month and year? if so is it statistically significant?
+Graph: Line Graph 
+Question 2: Are certain devices more susceptible to data breaches according to the data given?
+Graph: Bar Chart (We will also conduct a hypothesis test)
+Question 3: Which states have the largest number of individuals affected by data breaches? What type of data breach was dominant?
+Graph: Bar Chart
+Question 4: Is there a correlation between the type of breach and the total number of breaches in the dataset?
+Graph: Mosaic chart
+Question 5: Is there a correlation between the type of breach and the number of indiviuals effected?
+Graph: Bar Chart
+
+
+
+
+
+
+
+What we are going to do to meet our goals?
+The ways we are going to meet our goals and answer the following questions 
+is use the techniques given to us in class and use while using those techniques 
+will help us understand the trends and corrleation of the data set. We will use the graphs we determine are best to visualize the data and make final conlusions based off of them.
+
+## Code Used to Clean Our Data
+Removed columns that were irrelevent to the questions we wanted to answer.
+We also needed to fix a name of one of the companies.
+
+library(dplyr)
+library(tidyverse)
+
+
+CIS_435_project_data <- select(CIS_435_project_data, -c(X1, date_start, date_end, Date_Posted_or_Updated))
+
+CIS_435_project_data <- CIS_435_project_data %>%
+  mutate(Business_Associate_Involved=recode(Business_Associate_Involved, 'Accretive Health, Inc'='Accretive Health'))
+
+
+
+
+
